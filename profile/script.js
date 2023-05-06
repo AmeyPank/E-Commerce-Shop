@@ -11,8 +11,7 @@ const logoutButton=document.querySelector("#logoutBtn")
 const currentUser=JSON.parse(localStorage.getItem("currentUser"))
 let allUsersArr=JSON.parse(localStorage.getItem("user"))
 
-firstName.value=currentUser.firstName
-lastName.value=currentUser.lastName
+
 
 
 // Check if first name and last name fields are empty
@@ -27,18 +26,19 @@ lastName.value=currentUser.lastName
 // }
 // Alternatively, check if currentUser object has been defined (assuming this is stored in localStorage)
 var currentUserStr = localStorage.getItem("currentUser");
-if(currentUser === null){
+if(currentUserStr === null){
   alert("You are not authorized to access this page. Please login or sign up to continue.");
   window.location.href = "../index.html";
 } else {
   // var currentUser = JSON.parse(currentUserStr);
-  if(typeof currentUser.firstName === "undefined" || typeof currentUser.lastName === "undefined"){
+  if(typeof currentUser.firstName === "undefined" || typeof currentUser.lastName === "undefined" || currentUser.firstName === null){
     alert("You are not authorized to access this page. Please login or sign up to continue.");
     window.location.href = "../index.html";
   }
 }
 
-
+firstName.value=currentUser.firstName
+lastName.value=currentUser.lastName
 //function for saving users info
 // Add an event listener to the "save info" button and call saveInfoFunction when clicked
 saveInfoButton.addEventListener("click", saveInfoFunction)
