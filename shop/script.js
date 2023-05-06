@@ -30,6 +30,14 @@ let electronics = [];
 let response = [];
 let myCartArray = []; 
 
+// check if the current user is not stored in the localStorage
+if(!localStorage.getItem("currentUser")){
+  alert("you need to signup or login first to access products");
+   setTimeout(()=>{
+    window.location.href  ="../index.html";
+   },1000);
+}
+
 // Retrieve the cart array from local storage and assign it to a variable.
 let temp = JSON.parse(localStorage.getItem("cart"));
 if (temp) {
@@ -83,6 +91,16 @@ const user1 = JSON.parse(localStorage.getItem('currentUser'));
 let message = document.getElementById('welcome');
 message.innerHTML = `Welcome ${user1.firstName} to ShopEasy.`;
 
+if(user1.firstName === null){
+  alert("You are not authorized to access this page. Please login or sign up to continue.");
+  window.location.href = "../index.html";
+} else {
+  // var currentUser = JSON.parse(currentUserStr);
+  if(typeof user1.firstName === "undefined" || typeof user1.firstName === "undefined"){
+    alert("You are not authorized to access this page. Please login or sign up to continue.");
+    window.location.href = "../index.html";
+  }
+}
 console.log(message)
 console.log(localStorage.getItem('currentUser'))
 

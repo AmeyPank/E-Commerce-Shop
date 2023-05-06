@@ -16,7 +16,15 @@ lastName.value=currentUser.lastName
 
 
 // Check if first name and last name fields are empty
+if(!localStorage.getItem("currentUser")){
+  // if the user is not stored, show an alert message
+  alert("We're sorry, but it looks like there was an error processing your request. Please try again later or contact our support team for assistance.");
 
+  // Set a delay(function execution) of 1 second(1000 milliseconds) to redirect to the homepage.
+  setTimeout(()=>{
+    window.location.href  ="../index.html";
+   },1000);
+}
 // Alternatively, check if currentUser object has been defined (assuming this is stored in localStorage)
 var currentUserStr = localStorage.getItem("currentUser");
 if(currentUserStr === null){
