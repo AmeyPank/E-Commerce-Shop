@@ -241,3 +241,8 @@ main-content .items .item .circle {
   background-color: #07cdff;
   color: #000;
 }
+#welcome{
+  font-size: 1.5rem;
+  color: #07ff93;
+  text-align: center;
+}
