@@ -1,5 +1,5 @@
 // myProducts.filter((item)=>item.title.includes(search.value))
-
+// Hosting site on netlify github pages not working
 // myCartProductArray = myProducts.filter((item)=> myCartIDs.includes(item.id))
 
 // Add event listener for the Login button
