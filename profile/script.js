@@ -27,7 +27,7 @@ lastName.value=currentUser.lastName
 // }
 // Alternatively, check if currentUser object has been defined (assuming this is stored in localStorage)
 var currentUserStr = localStorage.getItem("currentUser");
-if(currentUserStr === null){
+if(currentUser === null){
   alert("You are not authorized to access this page. Please login or sign up to continue.");
   window.location.href = "../index.html";
 } else {
