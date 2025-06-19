@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="../main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <title>ShopEazy.</title>
 </head>
 
@@ -24,17 +27,36 @@
   <div class="formContainer">
     <h1>My Profile</h1>
     <form action="">
-      <input id="firstName" type="text" placeholder="First Name">
-      <input id="lastName" type="text" placeholder="Last Name">
+      <div class="input-group">
+        <i class="fa fa-user"></i>
+        <input id="firstName" type="text" placeholder="First Name">
+      </div>
+      <div class="input-group">
+        <i class="fa fa-user"></i>
+        <input id="lastName" type="text" placeholder="Last Name">
+      </div>
+  
       <button id="saveInfoBtn">Save Info</button>
+  
       <h1>Edit Password</h1>
-      <input id="oldPassword" type="password" placeholder="Old Password">
-      <input id="newPassword" type="text" placeholder="New Password">
-      <input id="confirmPassword" type="password" placeholder="Confirm Password">
+      <div class="input-group">
+        <i class="fa fa-lock"></i>
+        <input id="oldPassword" type="password" placeholder="Old Password">
+      </div>
+      <div class="input-group">
+        <i class="fa fa-key"></i>
+        <input id="newPassword" type="text" placeholder="New Password">
+      </div>
+      <div class="input-group">
+        <i class="fa fa-check"></i>
+        <input id="confirmPassword" type="password" placeholder="Confirm Password">
+      </div>
+  
       <button id="saveBtn">Change Password</button>
       <button id="logoutBtn">Logout</button>
     </form>
   </div>
+  
   <script src="./script.js"></script>
 </body>
 
