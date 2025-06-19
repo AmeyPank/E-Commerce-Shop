@@ -86,7 +86,7 @@ async function fetchAPI(url) {
 }
 
 
-// Welcome Messege
+// Welcome Message
 const user1 = JSON.parse(localStorage.getItem('currentUser'));
 let message = document.getElementById('welcome');
 message.innerHTML = `Welcome ${user1.firstName} to ShopEasy.`;

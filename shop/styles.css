@@ -4,7 +4,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  
+
 }
 
 body {
@@ -34,28 +34,25 @@ datalist {
   width: 100%;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: white;
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  width: 100%;
-  background-color: black;
-  border-bottom: 1px solid white;
-  padding: 1rem;
-  font-size: 1rem;
+#searchBar {
+  display: block;
+  z-index: 1000;
+  /* Make it behave like a block element */
+  margin: 2rem auto;
+  /* Auto left/right = center */
+  width: 70%;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  outline: none;
+  transition: box-shadow 0.2s ease-in-out;
 }
 
-nav .brand {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-nav .nav-items a {
-  margin: 0 0.5rem;
+#searchBar:focus {
+  box-shadow: 0 1px 8px rgba(66, 133, 244, 0.5);
 }
 
 main {
@@ -63,22 +60,34 @@ main {
   height: 100vh;
 }
 
+/* 🔲 Sidebar */
 main aside {
   flex: 0.2;
   background-color: black;
   color: white;
   height: 100vh;
   position: fixed;
-  padding-top: 1rem;
-  width: 11rem;
-  margin-top: 2rem;
+  left: 0;
+  top: 60px;
+  /* give space below nav bar if any */
+  width: 240px;
+  background-color: #111;
+  color: white;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  padding: 1rem;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2);
+  z-index: 10;
 }
 
 main main-content {
-  display: block;
-  width: 100%;
-  margin-left: 11rem;
-  margin-top: 4rem;
+  margin-left: 240px;
+  /* to clear sidebar */
+  margin-top: 60px;
+  /* to clear navbar */
+  padding: 1.5rem 2rem;
+  width: calc(100% - 240px);
+  overflow-x: hidden;
 }
 
 aside section {
@@ -95,11 +104,13 @@ aside section title {
   font-size: 1.5rem;
   /* margin-bottom: 1rem; */
 }
-aside section button{
+
+aside section button {
   padding: .2rem .4rem;
   margin: .3rem 3rem;
 }
-aside section button:hover{
+
+aside section button:hover {
   cursor: pointer;
 }
 
@@ -118,12 +129,6 @@ main-content {
   position: relative;
 }
 
-main-content input {
-  padding: 1rem;
-  width: 100%;
-  position: relative;
-  font-size: 1rem;
-}
 
 main-content .filters {
   display: flex;
@@ -137,12 +142,14 @@ main-content .filter {
   padding: 0.5rem 1rem;
   border: 1px solid black;
   cursor: pointer;
+  margin-left: 5rem;
 }
 
 
 
 main-content section {
   margin-top: 1.2rem;
+  margin-left: 5rem;
 }
 
 main-content section title {
@@ -159,36 +166,44 @@ main-content .items {
   gap: 2.5rem;
   flex-wrap: wrap;
 }
-main-content .items h1{
+
+main-content .items h1 {
   display: block;
 }
 
 main-content .items .item {
   border: 1px solid black;
   width: 15rem;
-   /* height: 30rem; */
+  /* height: 30rem; */
 }
-#img-div{
+
+#img-div {
   height: 10rem;
 }
-#info-div{
+
+#info-div {
   height: 12rem;
 }
-#btn-div{
+
+#btn-div {
   height: 10%;
 }
+
 main-content .items .item img {
   max-width: 50%;
   width: 100%;
   height: 100%;
-    margin-left: 4rem;
+  margin-left: 4rem;
   margin-top: 1rem;
 }
-.title{
+
+.title {
   margin-bottom: 19px;
 }
+
 main-content .items .item .row {
   display: flex;
+  margin-left: auto;
   justify-content: space-between;
 }
 
@@ -218,14 +233,17 @@ main-content .items .item .circle {
   border-radius: 100%;
   margin: 0 5px;
 }
-.hide-class{
+
+.hide-class {
   display: none
 }
-.active{
+
+.active {
   color: white;
   background-color: black;
 }
-#apply-btn{
+
+#apply-btn {
   background-color: #ffc107;
   color: black;
   width: 100%;
@@ -237,12 +255,20 @@ main-content .items .item .circle {
   cursor: pointer;
 
 }
-#apply-btn:hover{
+
+#apply-btn:hover {
   background-color: #07cdff;
   color: #000;
 }
-#welcome{
-  font-size: 1.5rem;
-  color: #07ff93;
+
+#welcome {
+  font-size: 1.75rem;
+  font-weight: 600;
   text-align: center;
+  background: linear-gradient(90deg, #07ff93, #00f2ff, #ff00c8);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
